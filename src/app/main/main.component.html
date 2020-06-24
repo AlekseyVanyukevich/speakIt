@@ -1,0 +1,5 @@
+<ul *ngIf="words$ | async  as words">
+    <li *ngFor="let w of words">
+        {{w.word}}
+    </li>
+</ul>
