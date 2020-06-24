@@ -30,13 +30,20 @@ namespace SpeakItApplication
             services.AddControllers()
                 .AddNewtonsoftJson();
 
+            services.AddCors(c =>
+            {
+                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
+            });
+
             Uri wordsServiceUri = new Uri("https://afternoon-falls-25894.herokuapp.com/words");
             HttpClient client = new HttpClient
             {
                 BaseAddress = wordsServiceUri
             };
+
+
             ServicePointManager.FindServicePoint(wordsServiceUri).ConnectionLeaseTimeout = 60000;
-            services.AddSingleton<HttpClient>(client);
+            services.AddSingleton(client);
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -46,6 +53,11 @@ namespace SpeakItApplication
             {
                 app.UseDeveloperExceptionPage();
             }
+
+            app.UseCors(options =>
+            {
+                options.AllowAnyOrigin();
+            });
 
             app.UseHttpsRedirection();
 
