@@ -1,0 +1,36 @@
+.container {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: url("/assets/images/bg.png");
+    background-size: cover;
+}
+
+.content {
+    text-align:  center;
+}
+
+.heading {
+    font-size: 40px;
+    margin-top: -100px;
+    margin-bottom: 40px;
+    color: #6cffde;
+    opacity: .8;
+    text-transform: uppercase;
+    letter-spacing: 13px;
+}
+
+.text {
+    margin-bottom: 60px;
+    font-size: 18px;
+    line-height: 1.4;
+    color: #fff;
+    opacity: .8;
+}
+
+.start-btn {
+    display: block;
+    max-width: 200px;
+    margin: 0 auto;
+}

@@ -1,4 +1,6 @@
 /* You can add global styles to this file, and also import other style files */
+@import "./assets/style.scss";
+
 * {
     margin: 0;
     padding: 0;
@@ -7,4 +9,28 @@
 
 body, html {
     height: 100%;
+    font-weight: normal;
+    font-family: "Open Sans", sans-serif;
+    font-size: 22px;
+}
+
+a, button {
+    color: inherit;
+    font-size: inherit;
+    font-weight: inherit;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+.btn {
+    font-size: 24px;
+    padding: 15px 25px;
+    color: #fff;
+    background: #00c49d;
+    border-radius: 4px;
+    transition: .15s;
+    box-shadow: 0 0 0 1px rgba(255,255,255,.1), 0 2px 4px 0 rgba(14,30,37,.12);
 }
