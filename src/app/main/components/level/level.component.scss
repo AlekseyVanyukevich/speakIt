@@ -1,0 +1,46 @@
+.level {
+    display: flex;
+    justify-content: start;
+    &-list {
+        position: relative;
+        display: grid;
+        grid-auto-columns: 25px;
+        grid-template-rows: 25px;
+        grid-auto-flow: column;
+        gap: 0 7px;
+        &::before {
+            content: "";
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            height: 2px;
+            width: calc(100% - 25px);
+            background-color:#00c49d;
+            transform: translate(-50%, -50%);
+        }
+    }
+    &-point {
+        position: relative;
+        border-radius: 50%;
+        background-color: #00c49d;
+        background: radial-gradient(#00c49d 0%, #00c49d 50%, transparent 50%, transparent 100%);
+        transition: 0.5s;
+        width: 100%;
+        height: 100%;
+        cursor: pointer;
+        &:not(.level-point__active):hover {
+            box-shadow: inset 0 0 0 2px #ffffff, inset 0 0 0 3px #00c49d;
+        }
+        &__active::before {
+            position: absolute;
+            content: "";
+            height: 95%;
+            width: 95%;
+            border: 1px solid #00c49d;
+            border-radius: 50%;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+        }
+    }
+}

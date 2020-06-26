@@ -1,0 +1,33 @@
+.form {
+    &-image {
+        width: 390px;
+        height: 260px;
+        object-fit: cover;
+        margin-bottom: 10px;
+        border-radius: 5px;
+        box-shadow: 5px 5px 25px rgba(118,118,118,.25);
+    }
+    &-control {
+        display: block;
+        border: 0;
+        border-bottom: 1px solid rgb(206, 212, 218);
+        background-color: transparent;
+        padding: 5px 20px;
+        margin: 0 auto 14px;
+        width: 100%;
+        height: 50px;
+        max-width: 1140px;
+        font-size: 20px;
+        line-height: 40px;
+        color: rgba(14, 30, 37, .7);
+        text-align: center;
+        font-size: 22px;
+        background-image: url(/assets/images/microphone.svg);
+        background-repeat: no-repeat;
+        background-size: 20px;
+        background-position: 10px 15px;
+        &:focus {
+            outline-color: #009179;
+        }
+    }
+}

@@ -1,5 +1,10 @@
-<ul *ngIf="words$ | async  as words">
-    <li *ngFor="let w of words">
-        {{w.word}}
-    </li>
-</ul>
+<div class="main">
+    <div class="main-container">
+        <app-level></app-level>
+        <app-form class="main-form"></app-form>
+        <div class="main-footer">
+            <app-words></app-words>
+            <app-buttons></app-buttons>
+        </div>
+    </div>
+</div>

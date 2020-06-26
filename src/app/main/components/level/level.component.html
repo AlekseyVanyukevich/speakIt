@@ -1,0 +1,5 @@
+<div class="level" >
+    <ul class="level-list">
+        <li (click)="onSelectLevel(level)" class="level-point" *ngFor="let level of maxLevels | appRange" [ngClass]="{ 'level-point__active': level === currentLevel }"></li>
+    </ul>
+</div>

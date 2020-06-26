@@ -9,6 +9,9 @@ import { RequestService } from './services/request.service';
     CommonModule,
     HttpClientModule
   ],
+  exports: [
+    CommonModule
+  ],
   providers: [RequestService]
 })
 export class SharedModule { }
