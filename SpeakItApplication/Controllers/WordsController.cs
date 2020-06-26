@@ -13,7 +13,6 @@ namespace SpeakItApplication.Controllers
 {
     [Route("api/[controller]")]
     [ApiController]
-    [EnableCors("AllowOrigin")]
     public class WordsController : ControllerBase
     {
         private readonly HttpClient _client;
@@ -31,7 +30,7 @@ namespace SpeakItApplication.Controllers
                 return BadRequest();
             }
             string responseData = await response.Content.ReadAsStringAsync();
-            List<WordModel> words = JsonConvert.DeserializeObject<List<WordModel>>(responseData);
+            List<WordModel> words = JsonConvert.DeserializeObject<List<WordModel>>(responseData).Take(10).ToList();
             return Ok(words);
         }
     }

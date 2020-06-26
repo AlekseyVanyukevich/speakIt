@@ -30,10 +30,7 @@ namespace SpeakItApplication
             services.AddControllers()
                 .AddNewtonsoftJson();
 
-            services.AddCors(c =>
-            {
-                c.AddPolicy("AllowOrigin", options => options.AllowAnyOrigin());
-            });
+            services.AddCors();
 
             Uri wordsServiceUri = new Uri("https://afternoon-falls-25894.herokuapp.com/words");
             HttpClient client = new HttpClient
@@ -56,7 +53,9 @@ namespace SpeakItApplication
 
             app.UseCors(options =>
             {
-                options.AllowAnyOrigin();
+                options.AllowAnyOrigin()
+                    .AllowAnyMethod()
+                    .AllowAnyHeader();
             });
 
             app.UseHttpsRedirection();
