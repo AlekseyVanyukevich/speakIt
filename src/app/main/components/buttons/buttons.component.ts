@@ -1,4 +1,6 @@
 import { Component, OnInit } from '@angular/core';
+import { GameService } from '../../services/game.service';
+import { Observable } from 'rxjs';
 
 @Component({
   selector: 'app-buttons',
@@ -7,9 +9,24 @@ import { Component, OnInit } from '@angular/core';
 })
 export class ButtonsComponent implements OnInit {
 
-  constructor() { }
+  isGameStarted$: Observable<boolean>;
+  constructor(
+    private gameService: GameService
+  ) { }
 
   ngOnInit(): void {
+    this.isGameStarted$ = this.gameService.isGameStarted();
   }
 
+  onStart() {
+    this.gameService.startGame();
+  }
+
+  onResults() {
+
+  }
+
+  onRestart() {
+    
+  }
 }

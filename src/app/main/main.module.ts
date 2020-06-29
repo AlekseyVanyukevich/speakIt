@@ -9,6 +9,8 @@ import { GameService } from './services/game.service';
 import { WordsComponent } from './components/words/words.component';
 import { FormComponent } from './components/form/form.component';
 import { ButtonsComponent } from './components/buttons/buttons.component';
+import { BytesMediaPipe } from './pipes/bytes-media.pipe';
+import { ResultsComponent } from './components/results/results.component';
 
 @NgModule({
     declarations: [
@@ -17,7 +19,9 @@ import { ButtonsComponent } from './components/buttons/buttons.component';
         LevelComponent,
         WordsComponent,
         FormComponent,
-        ButtonsComponent
+        ButtonsComponent,
+        BytesMediaPipe,
+        ResultsComponent
     ],
     imports: [
         SharedModule,

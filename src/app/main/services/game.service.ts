@@ -5,6 +5,7 @@ import { BehaviorSubject, Observable } from 'rxjs';
 export class GameService {
     private maxLevels: number = 6;
     private currentLevel: BehaviorSubject<number> = new BehaviorSubject(0);
+    private isStart: BehaviorSubject<boolean> = new BehaviorSubject(false);
 
     getCurrentLevel(): Observable<number> {
         return this.currentLevel;
@@ -16,5 +17,13 @@ export class GameService {
 
     getMaxLevels(): number {
         return this.maxLevels;
+    }
+
+    startGame(): void {
+        this.isStart.next(true);
+    }
+
+    isGameStarted(): Observable<boolean> {
+        return this.isStart;
     }
 }

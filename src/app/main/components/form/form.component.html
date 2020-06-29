@@ -1,8 +1,15 @@
 <form class="form">
-    <div class="form-image">
-        <img src="/assets/images/blank.jpg" alt="Blank">
+    <div *ngIf="selectedWord$ | async as selectedWord; else typeForm">
+        <div class="form-image">
+            <img [src]="selectedWord.image | appBytesMedia:'image'" [alt]="selectedWord.word">
+        </div>
+        <div class="form-field">
+            <input type="text" [value]="selectedWord.word" class="form-control" [readonly]="!isStarted" [ngClass]="{ 'form-control__allowed': isStarted }">
+        </div>
     </div>
-    <div class="form-field">
-        <input type="text" class="form-control">
-    </div>
+    <ng-template #typeForm>
+        <div class="form-image">
+            <img src="/assets/images/blank.jpg" alt="Blank">
+        </div>
+    </ng-template>
 </form>

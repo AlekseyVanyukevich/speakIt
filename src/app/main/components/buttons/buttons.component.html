@@ -1,1 +1,5 @@
-<p>buttons works!</p>
+<div class="buttons-container">
+    <button class="btn" (click)="onRestart()">Restart</button>
+    <button class="btn" (click)="onStart()" [ngClass]="{ 'btn__active': isGameStarted$ | async }">Speak please</button>
+    <button class="btn" (click)="onResults()"> Results</button>
+</div>
